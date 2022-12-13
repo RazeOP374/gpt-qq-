@@ -27,7 +27,7 @@ func (ctx *Chat) RefreshJWT() error {
 	if err != nil {
 		return err
 	}
-	req.Header.Add("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:107.0) Gecko/20100101 Firefox/107.0")
+	req.Header.Add("User-Agent", " Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 Edg/107.0.1418.62")
 	req.Header.Add("Cookie", "__Secure-next-auth.session-token="+ctx.sessionToken)
 	resp, err := ctx.client.Do(req)
 	if err != nil {
@@ -89,7 +89,7 @@ func (ctx *Chat) SendMessage(text string, cid, pid *uuid.UUID) (*Response, error
 	if err != nil {
 		return nil, err
 	}
-	req.Header.Add("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:107.0) Gecko/20100101 Firefox/107.0")
+	req.Header.Add("User-Agent", " Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 Edg/107.0.1418.62")
 	req.Header.Add("Authorization", "Bearer "+ctx.session.AccessToken)
 	req.Header.Set("Content-Type", "application/json")
 	resp, err := ctx.client.Do(req)
